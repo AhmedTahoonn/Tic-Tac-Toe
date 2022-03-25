@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:xoo/constant.dart';
+import 'package:xoo/styles/constant.dart';
 
 import 'Home Layout.dart';
 

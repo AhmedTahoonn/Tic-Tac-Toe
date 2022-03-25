@@ -6,7 +6,7 @@ import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:xoo/styles/icon_broken.dart';
 
-import '../constant.dart';
+import '../styles/constant.dart';
 import 'name of 2 player.dart';
 
 class home extends StatefulWidget {
