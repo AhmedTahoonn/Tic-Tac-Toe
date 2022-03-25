@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:xoo/styles/icon_broken.dart';
+import 'package:xoo/constant.dart';
 
 import 'Home Layout.dart';
 
@@ -11,11 +10,8 @@ class pageNamefor2player extends StatefulWidget {
 
 class _pageNamefor2playerState extends State<pageNamefor2player> {
   var formKey = GlobalKey<FormState>();
-
   var nameController = TextEditingController();
-
   var name2Controller = TextEditingController();
-
   var select_x=true;
 
   @override
@@ -57,7 +53,8 @@ class _pageNamefor2playerState extends State<pageNamefor2player> {
                            SizedBox(width: 10,),
                            Expanded(
                              child: TextFormField(
-                               style:GoogleFonts.aBeeZee(fontSize: 18,fontStyle: FontStyle.italic,fontWeight: FontWeight.w400) ,
+                               style:mystyle2.copyWith(fontSize: 18,fontWeight: FontWeight.w400) ,
+
                                controller: nameController,
                                validator: (value) {
                                  if (value!.isEmpty) {
@@ -129,7 +126,7 @@ class _pageNamefor2playerState extends State<pageNamefor2player> {
                             width: 100,
                             child: Center(
                               child: Text(
-                                'X',style: GoogleFonts.aBeeZee(fontSize: 85,fontStyle: FontStyle.italic,fontWeight: FontWeight.w700,color: Colors.red),
+                                'X',style:mystyle2.copyWith(fontSize: 85,color: Colors.red),
                               ),
                             ),
                           ),
@@ -156,7 +153,7 @@ class _pageNamefor2playerState extends State<pageNamefor2player> {
                             width: 100,
                             child: Center(
                               child: Text(
-                                'O',style: GoogleFonts.aBeeZee(fontSize: 85,fontStyle: FontStyle.italic,fontWeight: FontWeight.w700,color: Colors.green),
+                                'O',style:mystyle2.copyWith(fontSize: 85,color: Colors.green),
                               ),
                             ),
                           ),
@@ -183,7 +180,7 @@ class _pageNamefor2playerState extends State<pageNamefor2player> {
                             ),
                             Expanded(
                               child: TextFormField(
-                                style:GoogleFonts.aBeeZee(fontSize: 18,fontStyle: FontStyle.italic,fontWeight: FontWeight.w400) ,
+                                style:mystyle2.copyWith(fontSize: 18,fontWeight: FontWeight.w400) ,
 
                                 controller: name2Controller,
                                 validator: (value) {
@@ -249,7 +246,7 @@ class _pageNamefor2playerState extends State<pageNamefor2player> {
                             width: 100,
                             child: Center(
                               child: Text(
-                                'X',style: GoogleFonts.aBeeZee(fontSize: 85,fontStyle: FontStyle.italic,fontWeight: FontWeight.w700,color: Colors.red),
+                                'X',style:mystyle2.copyWith(fontSize: 85,color: Colors.red),
                               ),
                             ),
                           ),
@@ -276,7 +273,7 @@ class _pageNamefor2playerState extends State<pageNamefor2player> {
                             width: 100,
                             child: Center(
                               child: Text(
-                                'O',style: GoogleFonts.aBeeZee(fontSize: 85,fontStyle: FontStyle.italic,fontWeight: FontWeight.w700,color: Colors.green),
+                                'O',style:mystyle2.copyWith(fontSize: 85,color: Colors.green),
                               ),
                             ),
                           ),
@@ -295,20 +292,25 @@ class _pageNamefor2playerState extends State<pageNamefor2player> {
                             color: Colors.blueGrey
                         ),
                         width: double.infinity,
-                        child:MaterialButton(
-                          elevation: 0.0,
-                          onPressed: () {
-                            if (formKey.currentState!.validate()) {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => home(
-                                player1: nameController.text,
-                                player2: name2Controller.text,
-                                type: select_x?'X':'O',
-                              ),));
-                            }
-                          },
-                          child: Text(
-                            'Start',
-                            style: GoogleFonts.aBeeZee(fontSize: 25,fontStyle: FontStyle.italic,fontWeight: FontWeight.w400),
+                        child:ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+
+                          child: MaterialButton(
+                            highlightColor: Colors.blueGrey,
+                            splashColor: Colors.white,
+                            onPressed: () {
+                              if (formKey.currentState!.validate()) {
+                                Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => home(
+                                  player1: nameController.text,
+                                  player2: name2Controller.text,
+                                  type: select_x?'X':'O',
+                                ),), (route) => false);
+                              }
+                            },
+                            child: Text(
+                              'Start',
+                              style:mystyle2.copyWith(fontSize: 25,fontWeight: FontWeight.w400),
+                            ),
                           ),
                         ),
                       ),
@@ -323,3 +325,40 @@ class _pageNamefor2playerState extends State<pageNamefor2player> {
     );
   }
 }
+/*
+                    Padding(
+                      padding: const EdgeInsets.only(left: 30, right: 30,),
+                      child: Container(
+
+                        decoration: BoxDecoration(
+
+                            borderRadius: BorderRadius.circular(20.0),
+                            color: Colors.blueGrey
+                        ),
+                        width: double.infinity,
+                        child:ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+
+                          child: MaterialButton(
+                            highlightColor: Colors.blueGrey,
+                            splashColor: Colors.white,
+                            onPressed: () {
+                              if (formKey.currentState!.validate()) {
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => home(
+                                  player1: nameController.text,
+                                  player2: name2Controller.text,
+                                  type: select_x?'X':'O',
+                                ),));
+                              }
+                            },
+                            child: Text(
+                              'Start',
+                              style: GoogleFonts.aBeeZee(fontSize: 25,fontStyle: FontStyle.italic,fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+
+ */
+

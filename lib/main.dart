@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:xoo/splash%20screen.dart';
-import 'Home Layout.dart';
-import 'name of 2 player.dart';
+import 'package:xoo/modules/splash%20screen.dart';
 
 void main() {
   runApp(const MyApp());
