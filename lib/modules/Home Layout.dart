@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:xoo/styles/icon_broken.dart';
+
+import '../styles/constant.dart';
+import 'name of 2 player.dart';
 
 class home extends StatefulWidget {
   final String ?player1;
@@ -31,13 +35,7 @@ class _homeState extends State<home> {
   int player1Score=0;  //total score
  int player2Score=0;   //total score
  int fillBox=0;//بيعد البوكس الي موجوده عشان لو محدش فاز اقدر استخدمه ك شرط
- var mystyle= GoogleFonts.pressStart2p(
- fontSize:15,
- letterSpacing: 2,
- color: Colors.white,
- fontStyle: FontStyle.italic,
- );
- var mystyle2=  GoogleFonts.aBeeZee(fontSize: 85,fontStyle: FontStyle.italic,fontWeight: FontWeight.w400) ;
+
 
  @override
   Widget build(BuildContext context) {
@@ -51,7 +49,9 @@ class _homeState extends State<home> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children:
             [
-              Image(image: AssetImage('assets/images/back1.png'),height: 50,width: 100,),
+              IconButton(onPressed: (){
+                Navigator.push(context,MaterialPageRoute(builder: (context) => pageNamefor2player(),) );
+              }, icon: Icon(IconBroken.Arrow___Left_Square),iconSize: 45,color: Colors.white,),
               SizedBox(height: 10,),
               Padding(
                 padding: const EdgeInsets.only( right: 20.0,left: 20.0,),
@@ -100,7 +100,7 @@ class _homeState extends State<home> {
                           padding: const EdgeInsets.only(right: 15.0,left: 15),
                           child: Text(
                               'vs',
-                            style: mystyle2.copyWith(fontSize: 30,color: Colors.white,fontStyle: FontStyle.italic),
+                            style: mystyle2.copyWith(fontSize: 30,color: Colors.white,),
                           ),
                         ),
                         Expanded(
@@ -493,6 +493,7 @@ class _homeState extends State<home> {
     );
 
   }
+  //////////////////////////////////////////////////////////////////////////////
   void checkWinner()
   {
     if(display[0]==display[1]&&display[0]==display[2]&&display[0]!='')
@@ -546,6 +547,7 @@ class _homeState extends State<home> {
       return null;
 
   }
+  //////////////////////////////////////////////////////////////////////////////
   void showWinner(winner)
   {
    showDialog(context: context, builder: (context)
@@ -606,6 +608,7 @@ class _homeState extends State<home> {
 
      }
   }
+  ///////////////////////////////////////////////////////////////////////////////
  
   void clear()
   {
@@ -621,6 +624,7 @@ class _homeState extends State<home> {
    fillBox=0;
 
   }
+  //////////////////////////////////////////////////////////////////////////////
   /*
   void shownotWinner()
  {

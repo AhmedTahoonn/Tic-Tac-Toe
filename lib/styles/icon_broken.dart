@@ -5,7 +5,9 @@
 //    - family: Iconly-Broken
 //      fonts:
 //       - asset: fonts/icons.ttf
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class IconBroken {
   IconBroken._();
@@ -112,4 +114,11 @@ class IconBroken {
   static const IconData Volume_Up = IconData(0xe961, fontFamily: _fontFamily);
   static const IconData Wallet = IconData(0xe962, fontFamily: _fontFamily);
   static const IconData Work = IconData(0xe963, fontFamily: _fontFamily);
+  static var mystyle= GoogleFonts.pressStart2p(
+    fontSize:15,
+    letterSpacing: 2,
+    color: Colors.white,
+    fontStyle: FontStyle.italic,
+  );
+   static var mystyle2=  GoogleFonts.aBeeZee(fontSize: 85,fontStyle: FontStyle.italic,fontWeight: FontWeight.w400) ;
 }
