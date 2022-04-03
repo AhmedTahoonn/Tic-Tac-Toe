@@ -493,6 +493,7 @@ class _homeState extends State<home> {
     );
 
   }
+  //////////////////////////////////////////////////////////////////////////////
   void checkWinner()
   {
     if(display[0]==display[1]&&display[0]==display[2]&&display[0]!='')
@@ -546,6 +547,7 @@ class _homeState extends State<home> {
       return null;
 
   }
+  //////////////////////////////////////////////////////////////////////////////
   void showWinner(winner)
   {
    showDialog(context: context, builder: (context)
@@ -606,6 +608,7 @@ class _homeState extends State<home> {
 
      }
   }
+  ///////////////////////////////////////////////////////////////////////////////
  
   void clear()
   {
@@ -621,6 +624,7 @@ class _homeState extends State<home> {
    fillBox=0;
 
   }
+  //////////////////////////////////////////////////////////////////////////////
   /*
   void shownotWinner()
  {

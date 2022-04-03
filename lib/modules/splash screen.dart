@@ -2,7 +2,6 @@ import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:xoo/styles/constant.dart';
-
 import 'name of 2 player.dart';
 
 class splashScreen extends StatelessWidget {
