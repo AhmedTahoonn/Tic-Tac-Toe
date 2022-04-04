@@ -3,5 +3,5 @@
 A new Flutter project.
 
 ## Getting Started
-<img src="https://user-images.githubusercontent.com/101335124/161457470-c609a58a-93d5-49b4-81ee-7240dc077f0b.png" width=50% height=40%>
+<img src="https://user-images.githubusercontent.com/101335124/161458055-e6bf4ff5-b105-4c4e-94af-21de3266d3cb.png" width=280px% height=600px%>
 
