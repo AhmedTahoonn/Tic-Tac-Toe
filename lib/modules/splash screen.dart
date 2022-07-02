@@ -8,7 +8,6 @@ class splashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[900],
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -29,10 +28,10 @@ class splashScreen extends StatelessWidget {
                 child: AvatarGlow(
                   glowColor: Colors.blue,
                   endRadius: 100.0,
-                  duration: Duration(milliseconds: 2000),
+                  duration: Duration(milliseconds: 5000),
                   repeat: true,
                   showTwoGlows: true,
-                  repeatPauseDuration: Duration(milliseconds: 100),
+                  repeatPauseDuration: Duration(milliseconds: 500),
                   child: Material(     // Replace this child with your own
                     shape: CircleBorder(),
                     child: CircleAvatar(
@@ -49,23 +48,15 @@ class splashScreen extends StatelessWidget {
                 ),
               ),
             ),
-
-                    Padding(
+            Padding(
                       padding: const EdgeInsets.only(left: 30, right: 30,bottom: 30),
-                      child: Container(
-
-                        decoration: BoxDecoration(
-
-                            borderRadius: BorderRadius.circular(20.0),
-                            color: Colors.white
-                        ),
-                        width: double.infinity,
-                        child:ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Container(
+                          color: Colors.white,
+                          width: double.infinity,
+                          height: 50,
                           child: MaterialButton(
-                            highlightColor: Colors.white,
-                            splashColor: Colors.blueGrey,
                             onPressed: () {
                             Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => pageNamefor2player(),), (route) => false);
                             },
